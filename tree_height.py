@@ -14,7 +14,19 @@ def compute_height(n, parents):
 
 def main():
     # implement input form keyboard and from files
-    
+    print("Use an input to choose files or input - F or I ?")
+    textInput = input(">:: \t").upper()
+
+    if textInput == "F":
+        print("[!] \tEnter file name or file path. For example 'test/0'.")
+        fileName = input(">:: \t")
+    elif textInput == "I":
+        print("[!] \tEnter text below.")
+        textInput = input(">:: \t").strip()
+    else:
+        print("[Error] \tWrong choice input")
+
+
     # let user input file name to use, don't allow file names with letter a
     # account for github input inprecision
     
