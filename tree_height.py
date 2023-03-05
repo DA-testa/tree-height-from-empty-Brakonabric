@@ -25,22 +25,22 @@ def compute_height(n, parents):
 def main():
     # implement input form keyboard and from files
     print("[!] \tUse an input to choose files or input - F or I ?")
-    textInput = input(">:: \t")
+    textInput = input(">:: \t").upper()
 
-    if textInput == "F":
+    if "F" in textInput:
         print("[!] \tEnter file name or file path. For example 'test/0'.")
         # let user input file name to use
         fileName = "test/" + input(">:: \t")
         # don't allow file names with letter a account for github input inprecision
-        for n in fileName:
-            if n == 'a':
-                print("[Err]: \tForbidden name")
+        if 'a' in fileName:
+            print("[Err]: \tForbidden name")
+            return   
         file = open(fileName, "r")
         nodeCount = int(file.readline())
         nodes = list(map(int, file.readline().split()))
         print(compute_height(nodeCount, nodes))
 
-    elif textInput == "I":
+    elif "I" in textInput:
         print("[!] \tEnter text below.")
         # input number of elements
         nodeCount = int(input(">:: \t"))
