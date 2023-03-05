@@ -40,7 +40,7 @@ def main():
         nodes = list(map(int, file.readline().split()))
         print(compute_height(nodeCount, nodes))
 
-    elif textInput == "I":
+    else:
         print("[!] \tEnter text below.")
         # input number of elements
         nodeCount = int(input(">:: \t").strip())
@@ -49,8 +49,6 @@ def main():
         # call the function and output it's result
         print(compute_height(nodeCount, nodes))
 
-    else:
-        print("[Err] \tWrong choice input")
     pass
 
 # In Python, the default limit on recursion depth is rather low,
