@@ -14,21 +14,25 @@ def compute_height(n, parents):
 
 def main():
     # implement input form keyboard and from files
-    print("Use an input to choose files or input - F or I ?")
+    print("[!] \tUse an input to choose files or input - F or I ?")
     textInput = input(">:: \t").upper()
 
     if textInput == "F":
         print("[!] \tEnter file name or file path. For example 'test/0'.")
+        # let user input file name to use
         fileName = input(">:: \t")
+        # don't allow file names with letter a account for github input inprecision
+        for n in fileName:
+            if n == 'a':
+                print("[Err]: \tForbidden name")
     elif textInput == "I":
         print("[!] \tEnter text below.")
         textInput = input(">:: \t").strip()
     else:
-        print("[Error] \tWrong choice input")
+        print("[Err] \tWrong choice input")
 
 
-    # let user input file name to use, don't allow file names with letter a
-    # account for github input inprecision
+    
     
     # input number of elements
     # input values in one variable, separate with space, split these values in an array
@@ -41,5 +45,5 @@ def main():
 sys.setrecursionlimit(10**7)  # max depth of recursion
 threading.stack_size(2**27)   # new thread will get stack of such size
 threading.Thread(target=main).start()
-main()
+#main()
 # print(numpy.array([1,2,3]))
