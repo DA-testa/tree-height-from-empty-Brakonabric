@@ -25,7 +25,7 @@ def compute_height(n, parents):
 def main():
     # implement input form keyboard and from files
     print("[!] \tUse an input to choose files or input - F or I ?")
-    textInput = input(">:: \t").upper()
+    textInput = input(">:: \t")
 
     if textInput == "F":
         print("[!] \tEnter file name or file path. For example 'test/0'.")
@@ -36,19 +36,20 @@ def main():
             if n == 'a':
                 print("[Err]: \tForbidden name")
         file = open(fileName, "r")
-        nodeCount = int(file.readline().strip())
+        nodeCount = int(file.readline())
         nodes = list(map(int, file.readline().split()))
         print(compute_height(nodeCount, nodes))
 
-    else:
+    elif textInput == "I":
         print("[!] \tEnter text below.")
         # input number of elements
-        nodeCount = int(input(">:: \t").strip())
+        nodeCount = int(input(">:: \t"))
         # input values in one variable, separate with space, split these values in an array
         nodes = list(map(int, input(">:: ").split()))
         # call the function and output it's result
         print(compute_height(nodeCount, nodes))
-
+    else:
+        print("[Err]:\tWrong input")
     pass
 
 # In Python, the default limit on recursion depth is rather low,
