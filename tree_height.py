@@ -30,7 +30,7 @@ def main():
     if textInput == "F":
         print("[!] \tEnter file name or file path. For example 'test/0'.")
         # let user input file name to use
-        fileName = input(">:: \t")
+        fileName = "test/" + input(">:: \t")
         # don't allow file names with letter a account for github input inprecision
         for n in fileName:
             if n == 'a':
@@ -58,4 +58,4 @@ sys.setrecursionlimit(10**7)  # max depth of recursion
 threading.stack_size(2**27)   # new thread will get stack of such size
 threading.Thread(target=main).start()
 #main()
-# print(numpy.array([1,2,3]))
+#print(numpy.array([1,2,3]))
