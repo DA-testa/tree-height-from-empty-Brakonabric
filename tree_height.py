@@ -1,5 +1,5 @@
 # python3
-
+# Linass Jokšass 221RDB522
 import sys
 import threading
 import numpy
